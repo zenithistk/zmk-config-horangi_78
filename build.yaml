@@ -1,0 +1,6 @@
+---
+include:
+  - board: seeeduino_xiao_ble
+    shield: horangi_78_left rgbled_adapter
+  - board: seeeduino_xiao_ble
+    shield: horangi_78_right rgbled_adapter
