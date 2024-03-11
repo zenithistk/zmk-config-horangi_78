@@ -1,4 +1,4 @@
-#include "horangi_grin.dtsi"
+#include "horangi_78.dtsi"
 
 &default_transform {
     col-offset = <7>;

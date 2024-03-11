@@ -1,4 +1,4 @@
-#include "horangi_grin.dtsi"
+#include "horangi_78.dtsi"
 
 &kscan0 {
     col-gpios
