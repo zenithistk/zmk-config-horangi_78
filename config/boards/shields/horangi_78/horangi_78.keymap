@@ -90,6 +90,9 @@
             flavor = "tap-preferred";
             bindings = <&bt_0_clr>, <&bt_0>;
         };
+    };
+
+    behaviors {
         bt1: bluetooth_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -97,14 +100,6 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&bt_1_clr>, <&bt_1>;
-        };
-        bt2: bluetooth_2 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <1000>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&bt_2_clr>, <&bt_2>;
         };
     };
 
@@ -125,8 +120,8 @@
             bindings = <
          &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10   &kp F11 &kp F12      &trans    &trans
 &bt BT_CLR_ALL   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans &trans   &trans    &trans
-&bt_0    &trans  &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans   &trans   &trans   &trans  &trans          &trans   &trans
-&bt_1     &trans &trans   &trans   &trans   &trans   &trans          &trans &trans   &trans   &trans &trans &trans &trans   &trans      &trans
+&bt0    &trans  &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans   &trans   &trans   &trans  &trans          &trans   &trans
+&bt1     &trans &trans   &trans   &trans   &trans   &trans          &trans &trans   &trans   &trans &trans &trans &trans   &trans      &trans
 &select_usb   &trans &trans &trans     &trans  &trans                &trans   &trans  &trans &trans &trans    &trans &trans    &trans
             >;
         };
