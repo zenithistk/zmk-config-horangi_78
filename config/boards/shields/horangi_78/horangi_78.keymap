@@ -106,7 +106,7 @@
             tapping_term_ms = <1000>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&ab>, <&cd>;
+            bindings = <&bt_0_clr>, <&bt_0>;
         };
     };
 
