@@ -6,6 +6,24 @@
 
 / {
     macros {
+        ab: ab {
+            label = "ab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp A>
+                , <&kp B>;
+        };
+
+        cd: cd {
+            label = "cd";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp C>
+                , <&kp D>;
+        };
+
         bt_0: bt_profile_macro_0 {
             label = "BT_0";
             compatible = "zmk,behavior-macro";
@@ -88,7 +106,7 @@
             tapping_term_ms = <1000>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
+            bindings = <&ab>, <&cd>;
         };
     };
 
