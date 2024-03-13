@@ -85,10 +85,10 @@
         bt0: bluetooth_0 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <1000>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&out OUT_BLE &bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2>, <&out OUT_BLE &bt BT_SEL 0 &bt BT_CLR>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
         };
     };
 
