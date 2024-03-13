@@ -13,7 +13,6 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 0>
-                , <&macro_wait_time 1500>
                 , <&bt BT_DISC 1>
                 , <&bt BT_DISC 2>;
         };
@@ -25,7 +24,6 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 1>
-                , <&macro_wait_time 1500>
                 , <&bt BT_DISC 0>
                 , <&bt BT_DISC 2>;
         };
@@ -37,7 +35,6 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 2>
-                , <&macro_wait_time 1500>
                 , <&bt BT_DISC 1>
                 , <&bt BT_DISC 2>;
         };
@@ -48,7 +45,6 @@
             #binding-cells = <0>;
             bindings
                 = <&out OUT_USB>
-                , <&macro_wait_time 1500>
                 , <&bt BT_DISC 0>
                 , <&bt BT_DISC 1>
                 , <&bt BT_DISC 2>;
@@ -61,7 +57,6 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 0>
-                , <&macro_wait_time 1500>
                 , <&bt BT_CLR>;
         };
 
@@ -72,7 +67,6 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 1>
-                , <&macro_wait_time 1500>
                 , <&bt BT_CLR>;
         };
 
@@ -83,29 +77,18 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 2>
-                , <&macro_wait_time 1500>
                 , <&bt BT_CLR>;
         };
     };
 
     behaviors {
         bt0: bluetooth_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&bt_0>, <&bt_0_clr>;
-        };
-        bt1: bluetooth_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&bt_1>, <&bt_1_clr>;
-        };
-        bt2: bluetooth_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&bt_2>, <&bt_2_clr>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&out OUT_BLE &bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2>, <&out OUT_BLE &bt BT_SEL 0 &bt BT_CLR>;
         };
     };
 
@@ -125,10 +108,10 @@
         lower_layer {
             bindings = <
          &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10   &kp F11 &kp F12      &trans    &trans
-&select_usb   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans &trans   &trans    &trans
+&trans   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans &trans   &trans    &trans
 &bt0    &trans  &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans   &trans   &trans   &trans  &trans          &trans   &trans
-&bt1     &trans &trans   &trans   &trans   &trans   &trans          &trans &trans   &trans   &trans &trans &trans &trans   &trans      &trans
-&bt2   &trans &trans &trans     &trans  &trans                &trans   &trans  &trans &trans &trans    &trans &trans    &trans
+&trans     &trans &trans   &trans   &trans   &trans   &trans          &trans &trans   &trans   &trans &trans &trans &trans   &trans      &trans
+&trans   &trans &trans &trans     &trans  &trans                &trans   &trans  &trans &trans &trans    &trans &trans    &trans
             >;
         };
        
