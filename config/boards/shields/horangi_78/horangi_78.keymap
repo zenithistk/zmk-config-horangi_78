@@ -90,28 +90,22 @@
 
     behaviors {
         bt0: bluetooth_0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <1000>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&bt_0_clr>, <&bt_0>;
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_0>, <&bt_0_clr>;
         };
         bt1: bluetooth_1 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <1000>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&bt_1_clr>, <&bt_1>;
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_1>, <&bt_1_clr>;
         };
         bt2: bluetooth_2 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <1000>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&bt_2_clr>, <&bt_2>;
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt_2>, <&bt_2_clr>;
         };
     };
 
