@@ -13,7 +13,9 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 0>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 1>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 2>;
         };
 
@@ -24,7 +26,9 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 1>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 0>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 2>;
         };
         
@@ -35,7 +39,9 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 2>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 0>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 1>;
         };
 
@@ -45,8 +51,11 @@
             #binding-cells = <0>;
             bindings
                 = <&out OUT_USB>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 0>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 1>
+                , <&macro_wait_time 1000>
                 , <&bt BT_DISC 2>;
         };
 
@@ -57,6 +66,7 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 0>
+                , <&macro_wait_time 1000>
                 , <&bt BT_CLR>;
         };
 
@@ -67,6 +77,7 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 1>
+                , <&macro_wait_time 1000>
                 , <&bt BT_CLR>;
         };
 
@@ -77,6 +88,7 @@
             bindings
                 = <&out OUT_BLE>
                 , <&bt BT_SEL 2>
+                , <&macro_wait_time 1000>
                 , <&bt BT_CLR>;
         };
     };
@@ -103,6 +115,17 @@
         };
     };
 
+    behaviors {
+        bt2: bluetooth_2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <1000>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&bt_2_clr>, <&bt_2>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -119,10 +142,10 @@
         lower_layer {
             bindings = <
          &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10   &kp F11 &kp F12      &trans    &trans
-&bt BT_CLR_ALL   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans &trans   &trans    &trans
+&select_usb   &trans   &trans   &trans   &trans   &trans   &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans &trans   &trans    &trans
 &bt0    &trans  &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans   &trans   &trans   &trans  &trans          &trans   &trans
 &bt1     &trans &trans   &trans   &trans   &trans   &trans          &trans &trans   &trans   &trans &trans &trans &trans   &trans      &trans
-&select_usb   &trans &trans &trans     &trans  &trans                &trans   &trans  &trans &trans &trans    &trans &trans    &trans
+&bt2   &trans &trans &trans     &trans  &trans                &trans   &trans  &trans &trans &trans    &trans &trans    &trans
             >;
         };
        
