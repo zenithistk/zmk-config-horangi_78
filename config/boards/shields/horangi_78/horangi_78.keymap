@@ -11,11 +11,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&out OUT_BLE>
-                , <&bt BT_SEL 0>
-                , <&macro_wait_time 300>
-                , <&bt BT_DISC 1>
-                , <&bt BT_DISC 2>;
+                = <&kp A>;
         };
 
         bt_1: bt_profile_macro_1 {
@@ -59,10 +55,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&out OUT_BLE>
-                , <&bt BT_SEL 0>
-                , <&macro_wait_time 300>
-                , <&bt BT_CLR>;
+                = <&kp N1>;
         };
 
         bt_1_clr: bt_profile_macro_1_clr {
