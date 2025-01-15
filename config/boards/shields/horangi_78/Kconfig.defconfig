@@ -1,4 +1,4 @@
-if SHIELD_HORANGI_78_LEFT
+if SHIELD_HORANGI_78_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "horangi_78"
